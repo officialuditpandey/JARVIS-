@@ -1,0 +1,13 @@
+# Ignore API Keys and Secrets
+.env
+credentials.json
+token.json
+google_credentials.pkl
+
+# Ignore Python's internal temporary files
+__pycache__/
+*.pyc
+
+# Ignore local databases/logs
+memory/history.db
+*.log

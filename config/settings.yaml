@@ -1,0 +1,140 @@
+# JARVIS 2.0 - Omni-Feature Configuration
+# Master Blueprint Settings for all 20 Features
+
+# Global Settings
+global:
+  debug: false
+  escape_key_interrupt: true
+  log_to_syllabus: true
+  security_logs_dir: "C:/JARVIS/security_logs"
+
+# Sentinel Pack (Features 1-5)
+sentinel_pack:
+  face_recognition:
+    enabled: true
+    method: "opencv"  # fallback since face_recognition library failed
+    whitelist_file: "config/face_whitelist.json"
+    confidence_threshold: 0.7
+  object_counting:
+    enabled: true
+    track_objects: ["person", "phone", "book", "key"]
+    max_objects: 10
+  motion_heatmaps:
+    enabled: true
+    sensitivity: 25
+    min_area: 500
+    heatmap_file: "temp_motion_heatmap.jpg"
+
+# Scholar Pack (Features 6-10)
+scholar_pack:
+  study_mode:
+    enabled: true
+    block_sites: ["facebook.com", "twitter.com", "youtube.com"]
+    hosts_file: "C:/Windows/System32/drivers/etc/hosts"
+    focus_duration: 3600  # 1 hour
+  auto_flashcard:
+    enabled: true
+    output_dir: "flashcards/"
+    format: "json"
+    max_cards: 100
+  progress_bar:
+    enabled: true
+    style: "modern"
+    show_percentage: true
+  note_taking:
+    enabled: true
+    auto_save: true
+    format: "markdown"
+  research_assistant:
+    enabled: true
+    sources: ["wikipedia", "arxiv", "local_docs"]
+
+# Architect Pack (Features 11-15)
+architect_pack:
+  dashboard:
+    enabled: true
+    host: "localhost"
+    port: 5000
+    refresh_rate: 30  # seconds
+    show_camera: true
+    show_logs: true
+  git_service:
+    enabled: true
+    auto_backup: true
+    backup_interval: 3600  # 1 hour
+    repo_path: "."
+    commit_message: "Auto-backup by JARVIS"
+  api_service:
+    enabled: true
+    port: 8080
+    endpoints: ["vision", "security", "voice"]
+  cloud_sync:
+    enabled: true
+    provider: "local"
+    sync_interval: 300  # 5 minutes
+  system_monitor:
+    enabled: true
+    check_interval: 60  # 1 minute
+    alerts: ["cpu", "memory", "disk"]
+
+# Companion Pack (Features 16-20)
+companion_pack:
+  mood_prompting:
+    enabled: true
+    moods: ["professional", "friendly", "casual", "urgent"]
+    mood_file: "config/current_mood.txt"
+  music_controller:
+    enabled: true
+    supported_players: ["vlc", "spotify", "local"]
+    control_file: "config/music_state.json"
+  multi_voice:
+    enabled: true
+    voices: ["default", "formal", "casual", "urgent"]
+    voice_file: "config/current_voice.txt"
+  smart_assistant:
+    enabled: true
+    context_window: 10
+    memory_integration: true
+  automation_hub:
+    enabled: true
+    rules_file: "config/automation_rules.json"
+    smart_triggers: true
+
+# Vision Service Settings
+vision_service:
+  model: "moondream"
+  fallback_models: ["llava", "bakllava"]
+  resolution: [640, 480]
+  fps: 15
+  save_frames: true
+  frame_dir: "temp_frames/"
+
+# Voice Service Settings
+voice_service:
+  engine: "edge_tts"
+  fallback_engine: "pyttsx3"
+  rate: 180
+  volume: 1.0
+  escape_interrupt: true
+
+# Security Service Settings
+security_service:
+  motion_threshold: 25
+  min_area: 500
+  human_verification: true
+  alert_voice: true
+  save_security_images: true
+
+# Plugin Settings
+plugins:
+  auto_load: ["vision", "security", "scholar", "companion"]
+  plugin_dir: "plugins/"
+  config_dir: "config/"
+
+# Logging Settings
+logging:
+  level: "INFO"
+  file: "jarvis.log"
+  max_size: "10MB"
+  backup_count: 5
+  console_output: true

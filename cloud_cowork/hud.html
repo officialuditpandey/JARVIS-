@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Cowork HUD - Modern JARVIS Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f1, #1a1a2e);
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        body {
+            background: transparent;
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            width: 90vw;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hud-container {
+            background: rgba(20, 20, 40, 0.85);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            padding: 2rem;
+            position: relative;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .hud-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #00ff88;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .hud-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(45deg, #00ff88, #00aa66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .status-bar {
+            background: rgba(0, 0, 0, 0.8);
+            height: 4px;
+            border-radius: 10px 10px 0 0;
+            margin: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            background: #00ff88;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 10px rgba(0, 255, 255, 0.8); }
+            50% { box-shadow: 0 0 0 20px rgba(0, 255, 255, 1); }
+            100% { box-shadow: 0 0 0 10px rgba(0, 255, 255, 0.8); }
+        }
+
+        .thinking-indicator {
+            animation: pulse 1.5s infinite;
+            background: #00ffff;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .action-button {
+            background: linear-gradient(45deg, #00ff88, #00cc66);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .action-button:hover {
+            background: linear-gradient(45deg, #00cc66, #009944);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .vision-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .vision-feed {
+            width: 100%;
+            height: 200px;
+            background: #000;
+            border-radius: 10px;
+            margin-top: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-chat {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 1rem;
+            margin: 1rem 0;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            max-height: 150px;
+        }
+
+        .message {
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .message.ai {
+            background: rgba(0, 255, 255, 0.05);
+            border-left: 3px solid #00ffff;
+        }
+
+        .message.system {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 3px solid #00ff88;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 0.75rem;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .chat-input button {
+            background: linear-gradient(45deg, #00ff88, #00cc66);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .notification {
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #00ff88;
+        }
+
+        .notification.info { border-left-color: #00ff88; }
+        .notification.success { border-left-color: #00ff00; }
+        .notification.error { border-left-color: #ff0000; }
+        .notification.ai { border-left-color: #00ffff; }
+
+        .notification-title {
+            font-weight: bold;
+            color: #00ff88;
+            margin-bottom: 0.25rem;
+        }
+
+        .notification-message {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        .automation-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .automation-name {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .automation-status {
+            color: #00ff88;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="hud-container">
+        <div class="hud-header">
+            <h1 class="hud-title">CLOUD COWORK HUD</h1>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-indicator" id="statusIndicator"></div>
+            <span id="statusText">JARVIS Online</span>
+        </div>
+
+        <div class="action-grid">
+            <button class="action-button" onclick="executeAction('system_scan')">
+                🔍 System Scan
+            </button>
+            <button class="action-button" onclick="executeAction('volume_up')">
+                🔊 Volume Up
+            </button>
+            <button class="action-button" onclick="executeAction('volume_down')">
+                🔊 Volume Down
+            </button>
+            <button class="action-button" onclick="executeAction('brightness_up')">
+                💡 Brightness Up
+            </button>
+            <button class="action-button" onclick="executeAction('brightness_down')">
+                💡 Brightness Down
+            </button>
+            <button class="action-button" onclick="executeAction('whatsapp')">
+                📱 WhatsApp
+            </button>
+            <button class="action-button" onclick="executeAction('vision_toggle')">
+                📹 Vision Feed
+            </button>
+            <button class="action-button" onclick="executeAction('settings')">
+                ⚙️ Settings
+            </button>
+        </div>
+
+        <div class="vision-card">
+            <h3 style="color: #00ff88; margin-bottom: 1rem;">📹 Vision Portal</h3>
+            <div class="vision-feed" id="visionFeed">
+                <video id="cameraFeed" autoplay muted style="width: 100%; height: 100%; object-fit: cover;"></video>
+                <canvas id="visionCanvas" style="display: none;"></canvas>
+            </div>
+            <div style="margin-top: 0.5rem; text-align: center;">
+                <button class="action-button" onclick="captureVision()" style="margin: 0 0.5rem;">
+                    📸 Capture Frame
+                </button>
+            </div>
+        </div>
+
+        <div class="ai-chat">
+            <h3 style="color: #00ff88; margin-bottom: 1rem;">🤖 JARVIS AI</h3>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message system">
+                    <div class="notification-title">SYSTEM</div>
+                    <div class="notification-message">JARVIS HUD initialized. Ready for commands.</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Ask JARVIS anything..." style="flex: 1;">
+                <button onclick="sendChatMessage()">Send</button>
+            </div>
+        </div>
+
+        <div style="position: fixed; bottom: 20px; right: 20px; width: 300px; background: rgba(0, 0, 0, 0.8); border-radius: 10px; padding: 1rem;">
+            <h4 style="color: #00ff88; margin-bottom: 0.5rem;">📢 Notifications</h4>
+            <div id="notifications" style="max-height: 200px; overflow-y: auto;">
+                <div class="notification info">
+                    <div class="notification-title">INFO</div>
+                    <div class="notification-message">HUD System Online</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isThinking = false;
+        let visionStream = null;
+
+        function updateStatus(status, text = '') {
+            const indicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
+            
+            if (status === 'thinking' || status === 'processing') {
+                indicator.classList.add('thinking-indicator');
+                statusText.textContent = text || 'Processing...';
+            } else {
+                indicator.classList.remove('thinking-indicator');
+                statusText.textContent = text || 'Ready';
+            }
+        }
+
+        function addNotification(title, message, type = 'info') {
+            const notifications = document.getElementById('notifications');
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-title">${title}</div>
+                <div class="notification-message">${message}</div>
+            `;
+            
+            notifications.insertBefore(notification, notifications.firstChild);
+            
+            // Keep only last 5 notifications
+            while (notifications.children.length > 5) {
+                notifications.removeChild(notifications.lastChild);
+            }
+        }
+
+        function addChatMessage(message, type = 'user') {
+            const messages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.innerHTML = `<div style="margin-bottom: 0.5rem;">${message}</div>`;
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+            
+            // Keep only last 20 messages
+            while (messages.children.length > 20) {
+                messages.removeChild(messages.firstChild);
+            }
+        }
+
+        function executeAction(action) {
+            updateStatus('processing', `Executing ${action}...`);
+            
+            fetch('/api/execute_action', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: action })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    addNotification('Action Complete', data.result, 'success');
+                    addChatMessage(`Action ${action} completed: ${data.result}`, 'system');
+                } else {
+                    addNotification('Action Failed', data.error, 'error');
+                    addChatMessage(`Action ${action} failed: ${data.error}`, 'system');
+                }
+                updateStatus('ready');
+            })
+            .catch(error => {
+                addNotification('Network Error', 'Failed to execute action', 'error');
+                addChatMessage(`Network error: ${error}`, 'system');
+                updateStatus('ready');
+            });
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            updateStatus('thinking', 'Processing your request...');
+            addChatMessage(`You: ${message}`, 'user');
+            
+            fetch('/api/chat_command', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    addChatMessage(`JARVIS: ${data.response}`, 'ai');
+                } else {
+                    addChatMessage(`Error: ${data.error}`, 'system');
+                }
+                updateStatus('ready');
+            })
+            .catch(error => {
+                addChatMessage(`Network error: ${error}`, 'system');
+                updateStatus('ready');
+            });
+            
+            input.value = '';
+        }
+
+        function captureVision() {
+            const canvas = document.getElementById('visionCanvas');
+            const video = document.getElementById('cameraFeed');
+            
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Send frame for analysis
+            canvas.toBlob(blob => {
+                const formData = new FormData();
+                formData.append('frame', blob);
+                
+                fetch('/api/analyze_vision', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        addNotification('Vision Analysis', data.result, 'ai');
+                        addChatMessage(`Vision detected: ${data.result}`, 'ai');
+                    } else {
+                        addNotification('Vision Error', data.error, 'error');
+                    }
+                });
+            });
+        }
+
+        function toggleVisionFeed() {
+            const video = document.getElementById('cameraFeed');
+            const button = event.target;
+            
+            if (visionStream) {
+                visionStream.getTracks().forEach(track => track.stop());
+                visionStream = null;
+                video.srcObject = '';
+                button.textContent = '📹 Start Feed';
+                addNotification('Vision', 'Camera feed stopped', 'info');
+            } else {
+                navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+                .then(stream => {
+                    visionStream = stream;
+                    video.srcObject = URL.createObjectURL(stream);
+                    button.textContent = '📹 Stop Feed';
+                    addNotification('Vision', 'Camera feed started', 'success');
+                })
+                .catch(error => {
+                    addNotification('Vision Error', `Camera access denied: ${error.message}`, 'error');
+                });
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStatus('ready', 'JARVIS HUD Online');
+            
+            // Request camera access
+            navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+                .then(stream => {
+                    visionStream = stream;
+                    const video = document.getElementById('cameraFeed');
+                    video.srcObject = URL.createObjectURL(stream);
+                    addNotification('Vision', 'Camera initialized', 'success');
+                })
+                .catch(error => {
+                    addNotification('Vision Error', `Camera access denied: ${error.message}`, 'error');
+                });
+        });
+
+        // Auto-refresh notifications
+        setInterval(() => {
+            fetch('/api/get_notifications')
+                .then(response => response.json())
+                .then(data => {
+                    const notifications = document.getElementById('notifications');
+                    notifications.innerHTML = '';
+                    
+                    data.notifications.slice(-5).reverse().forEach(notification => {
+                        const notifDiv = document.createElement('div');
+                        notifDiv.className = `notification ${notification.type}`;
+                        notifDiv.innerHTML = `
+                            <div class="notification-title">${notification.title}</div>
+                            <div class="notification-message">${notification.message}</div>
+                        `;
+                        notifications.appendChild(notifDiv);
+                    });
+                });
+            })
+                .catch(error => console.error('Error fetching notifications:', error));
+        }, 5000);
+    </script>
+</body>
+</html>

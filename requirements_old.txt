@@ -1,0 +1,447 @@
+# JARVIS AI Assistant Requirements
+
+# Core AI and ML
+ollama>=0.1.7
+torch>=2.0.0
+transformers>=4.30.0
+numpy>=1.24.0
+opencv-python>=4.7.0
+Pillow>=9.5.0
+
+# Speech Recognition and TTS
+SpeechRecognition>=3.10.0
+pyttsx3>=2.90
+edge-tts>=6.1.0
+pygame>=2.5.0
+
+# Audio Processing
+pycaw>=20230408
+pyaudio>=0.2.11
+
+# System Automation
+pyautogui>=0.9.54
+keyboard>=0.13.5
+pywhatkit>=5.4
+
+# Web and API
+requests>=2.31.0
+flask>=2.3.0
+google-generativeai>=0.3.0
+google-api-python-client>=2.88.0
+google-auth-httplib2>=0.1.0
+google-auth-oauthlib>=1.0.0
+
+# System Control
+screen-brightness-control>=0.15.0
+psutil>=5.9.0
+
+# File and Data Processing
+pandas>=2.0.0
+openpyxl>=3.1.0
+python-docx>=0.8.11
+reportlab>=4.0.0
+
+# Database
+sqlite3
+
+# Development and Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Security and Cryptography
+cryptography>=41.0.0
+
+# Date and Time
+python-dateutil>=2.8.0
+
+# Threading and Async
+asyncio
+threading
+
+# Image Processing
+scikit-image>=0.21.0
+
+# Text Processing
+nltk>=3.8.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# Logging
+loguru>=0.7.0
+
+# HTTP and Networking
+httpx>=0.24.0
+aiohttp>=3.8.0
+
+# JSON and Data
+json5>=0.9.0
+
+# System Information
+platform
+distro
+
+# GUI Support
+tkinter
+customtkinter>=5.2.0
+
+# Additional Utilities
+colorama>=0.4.6
+tqdm>=4.65.0
+click>=8.1.0
+
+# Vision and Camera
+imageio>=2.31.0
+matplotlib>=3.7.0
+
+# Memory and Performance
+memory-profiler>=0.61.0
+
+# Error Handling
+retry>=0.9.0
+
+# WebSocket Support
+websockets>=11.0.0
+
+# File System
+watchdog>=3.0.0
+
+# Email (if needed)
+smtplib
+
+# Cloud Storage (if needed)
+boto3>=1.28.0
+
+# Notifications
+plyer>=2.1.0
+
+# System Monitoring
+GPUtil>=1.4.0
+
+# Audio Analysis
+librosa>=0.10.0
+
+# Text-to-Speech Alternatives
+gTTS>=2.3.0
+
+# OCR (if needed)
+pytesseract>=0.3.10
+
+# PDF Processing
+PyPDF2>=3.0.0
+
+# Excel Processing
+xlrd>=2.0.0
+
+# CSV Processing
+csv
+
+# ZIP and Archive
+zipfile
+
+# Hash and Security
+hashlib
+
+# Time and Sleep
+time
+
+# Random
+random
+
+# Math
+math
+
+# Regular Expressions
+re
+
+# JSON
+json
+
+# Base64
+base64
+
+# OS and System
+os
+sys
+subprocess
+platform
+
+# Threading and Multiprocessing
+threading
+multiprocessing
+
+# Async
+asyncio
+concurrent.futures
+
+# Path and File Handling
+pathlib
+shutil
+tempfile
+
+# Environment Variables
+dotenv
+
+# Logging
+logging
+
+# Configuration
+configparser
+
+# Type Hints
+typing
+
+# Data Classes
+dataclasses
+
+# Enums
+enum
+
+# Context Managers
+contextlib
+
+# Iterators and Generators
+itertools
+collections
+
+# String Operations
+string
+unicodedata
+
+# Number Operations
+decimal
+fractions
+
+# Date and Time
+datetime
+calendar
+time
+
+# Random Operations
+random
+secrets
+
+# Hash Operations
+hashlib
+hmac
+
+# Compression
+zlib
+gzip
+bz2
+lzma
+
+# Network
+socket
+urllib
+http
+ftplib
+smtplib
+
+# Email
+email
+mailbox
+
+# JSON and XML
+json
+xml.etree.ElementTree
+xmlrpc
+
+# Structured Data
+pickle
+marshal
+shelve
+
+# Database Interface
+sqlite3
+csv
+
+# Internet Data Handling
+base64
+quopri
+uu
+binhex
+
+# Localization
+locale
+
+# Text Services
+stringio
+codecs
+
+# System-specific
+msvcrt
+winreg
+winsound
+
+# Unix-specific
+posix
+pwd
+spwd
+grp
+crypt
+termios
+tty
+pty
+fcntl
+pipes
+resource
+syslog
+select
+pipes
+signal
+
+# Threading and Concurrency
+_thread
+threading
+queue
+asyncio
+concurrent.futures
+
+# Multiprocessing
+multiprocessing
+shared_memory
+
+# Synchronization
+threading
+queue
+asyncio
+concurrent.futures
+
+# Profiling and Debugging
+cProfile
+profile
+pstats
+timeit
+trace
+tracemalloc
+gc
+
+# Import Support
+importlib
+imp
+pkgutil
+modulefinder
+
+# Program Control
+sys
+builtins
+warnings
+
+# Data Types
+types
+copy
+pprint
+reprlib
+
+# Mathematical Support
+math
+cmath
+decimal
+fractions
+random
+statistics
+
+# Functional Programming
+functools
+itertools
+operator
+collections
+
+# File and Directory Access
+os.path
+shutil
+pathlib
+glob
+fnmatch
+tempfile
+linecache
+shelve
+pickle
+dbm
+sqlite3
+
+# Data Persistence
+pickle
+shelve
+sqlite3
+dbm
+csv
+json
+configparser
+xml.etree.ElementTree
+
+# Data Compression
+zlib
+gzip
+bz2
+lzma
+zipfile
+tarfile
+
+# File Formats
+csv
+configparser
+json
+pickle
+shelve
+sqlite3
+xml.etree.ElementTree
+
+# Cryptographic Services
+hashlib
+hmac
+secrets
+ssl
+
+# Generic Operating System Services
+os
+sys
+time
+argparse
+getopt
+logging
+getpass
+curses
+platform
+errno
+ctypes
+
+# Network and Interprocess Communication
+asyncio
+socket
+ssl
+email
+smtplib
+poplib
+imaplib
+urllib
+http
+ftplib
+nntplib
+telnetlib
+uuid
+socketserver
+http.server
+http.client
+http.server
+xmlrpc
+ipaddress
+
+# Internet Data Handling
+base64
+binascii
+quopri
+uu
+binhex
+
+# Structured Markup Processing Tools
+xml
+xml.dom
+xml.sax
+html
+html.parser
+html.entities
+cgi
+cgitb
+webbrowser

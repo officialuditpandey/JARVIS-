@@ -1,0 +1,116 @@
+# JARVIS .gitignore - Sensitive Files and Build Artifacts
+
+# API Keys and Credentials
+.env
+credentials.json
+google_credentials.pkl
+token.json
+*.pem
+*.key
+
+# Security and Logs
+security_logs/
+logs/
+*.log
+security_*.jpg
+security_*.png
+*.avi
+*.mp4
+
+# Memory and Data Files
+memory.json
+daily_notes.json
+vision_system_logs.json
+flashcards.json
+maps_locations.json
+file_registry.json
+critical_backup.json
+
+# Face Recognition Data
+config/face_whitelist.json
+face_encodings/
+faces/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# JARVIS Specific
+test_*.py
+debug_*.py
+*_test.py
+*_debug.py
+fix_*.py
+*_fixed.py
+temp_*.py
+*.tmp
+*.bak
+*.backup
+
+# Downloaded Models and Data
+ollama/models/
+data/
+downloads/
+
+# Cloud Sync Files
+cloud_workspace_token.json
+google_workspace_token.json
+
+# Audio and Video Files
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.mov
+
+# Configuration Files with Secrets
+config/automation_rules.json
+config/google_client_secrets.json
+
+# Temporary and Cache
+.cache/
+*.cache
+*.tmp
+*.temp
+
+# Docker
+.dockerignore

@@ -1,0 +1,31 @@
+{
+  "vision": [
+    "what am i holdingg",
+    "tell me what s in my hand",
+    "can you see what i got",
+    "look at my hand and tell me",
+    "show me what you see",
+    "scan the room",
+    "what do you see around",
+    "describe what i m holdingg",
+    "check what s in my hand",
+    "identify the objectect i have",
+    "hey jarvis check what i got in my hand",
+    "can u identify what im holdingg right now",
+    "look at this objectect in my hand and tell me",
+    "what should i do now",
+    "can you look around and tell me what you see"
+  ],
+  "security": [
+    "engage security mode",
+    "start security"
+  ],
+  "browser": [
+    "search for python tutorials",
+    "open google"
+  ],
+  "automation": [
+    "prepare study mode",
+    "setup meeting"
+  ]
+}

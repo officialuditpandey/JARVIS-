@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-04-12T23:01:05.861991",
+  "overall_status": "EXCELLENT",
+  "summary": {
+    "total_tests": 16,
+    "passed": 16,
+    "failed": 0,
+    "pass_rate": "100.0%"
+  },
+  "test_results": {
+    "core_module": {
+      "status": "PASS",
+      "message": "Main JARVIS module loads successfully",
+      "details": "File: jarvis_final.py"
+    },
+    "memory_service": {
+      "status": "PASS",
+      "message": "Memory service operational",
+      "details": "Database: jarvis_memory.db, History entries: 1"
+    },
+    "ai_service": {
+      "status": "PASS",
+      "message": "AI service loaded",
+      "details": "Service initialized successfully"
+    },
+    "self_awareness": {
+      "status": "PASS",
+      "message": "Self-awareness system operational",
+      "details": "Consciousness: AWARE, Goals: 3"
+    },
+    "proactive_reasoning": {
+      "status": "PASS",
+      "message": "Proactive reasoning operational",
+      "details": "Mode: reactive, Tasks: 0"
+    },
+    "emotional_intelligence": {
+      "status": "PASS",
+      "message": "Emotional intelligence operational",
+      "details": "Emotion: neutral, Empathy: 0.80"
+    },
+    "autonomous_goals": {
+      "status": "PASS",
+      "message": "Goal management operational",
+      "details": "Active goals: 3, Progress: 0.15"
+    },
+    "self_modification": {
+      "status": "PASS",
+      "message": "Self-modification system operational",
+      "details": "Modifications: 0, Learning: 0"
+    },
+    "self_preservation": {
+      "status": "PASS",
+      "message": "Self-preservation operational",
+      "details": "Threat level: NONE, System health: 0.0%"
+    },
+    "enhanced_core": {
+      "status": "PASS",
+      "message": "Enhanced core operational",
+      "details": "Files indexed: 270, Profile: 6 preferences"
+    },
+    "command_processor": {
+      "status": "PASS",
+      "message": "Intelligent command processing operational",
+      "details": "Category: vision, Confidence: 0.81"
+    },
+    "chitti_intelligence": {
+      "status": "PASS",
+      "message": "Chitti intelligence core operational",
+      "details": "Integration level: No Integration, Score: 0.00"
+    },
+    "integrations_manager": {
+      "status": "PASS",
+      "message": "Integrations manager operational",
+      "details": "Total: 13, Active: 2"
+    },
+    "database_system": {
+      "status": "PASS",
+      "message": "Database system operational",
+      "details": "Tables: 4"
+    },
+    "file_system": {
+      "status": "PASS",
+      "message": "File system access operational",
+      "details": "Read/write permissions confirmed"
+    },
+    "ollama_connection": {
+      "status": "PASS",
+      "message": "Ollama connection operational",
+      "details": "Available models: 7"
+    }
+  },
+  "passed_tests": [
+    "core_module",
+    "memory_service",
+    "ai_service",
+    "self_awareness",
+    "proactive_reasoning",
+    "emotional_intelligence",
+    "autonomous_goals",
+    "self_modification",
+    "self_preservation",
+    "enhanced_core",
+    "command_processor",
+    "chitti_intelligence",
+    "integrations_manager",
+    "database_system",
+    "file_system",
+    "ollama_connection"
+  ],
+  "failed_tests": [],
+  "recommendations": [
+    "JARVIS is mostly operational - focus on failed components"
+  ]
+}

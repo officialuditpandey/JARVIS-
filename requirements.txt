@@ -1,0 +1,106 @@
+# JARVIS - Hybrid AI Assistant Requirements
+# Core dependencies for voice-activated AI assistant with cloud and local intelligence
+
+# ===== CORE AI & MACHINE LEARNING =====
+# Google AI Integration
+google-api-python-client>=2.100.0
+google-auth-httplib2>=0.1.0
+google-auth-oauthlib>=1.0.0
+google-genai>=0.3.0
+
+# Local AI Models
+ollama>=0.1.0
+
+# Computer Vision & Image Processing
+opencv-python>=4.8.0
+opencv-contrib-python>=4.8.0
+Pillow>=9.0.0
+
+# ===== AUDIO & SPEECH PROCESSING =====
+# Text-to-Speech
+pyttsx3>=2.90
+edge-tts>=6.1.0
+
+# Speech Recognition
+SpeechRecognition>=3.10.0
+
+# Audio Control
+pycaw>=2023.1.0
+
+# ===== SYSTEM AUTOMATION =====
+# System Control & Automation
+pyautogui>=0.9.0
+keyboard>=0.13.0
+
+# WhatsApp & Web Automation
+pywhatkit>=5.4.0
+
+# ===== WEB & API =====
+# Web Framework
+Flask>=2.3.0
+
+# HTTP Requests
+requests>=2.31.0
+
+# ===== SYSTEM CONTROL =====
+# Screen Brightness
+screen-brightness-control>=0.27.0
+
+# ===== ENVIRONMENT & CONFIGURATION =====
+# Environment Variables
+python-dotenv>=1.0.0
+
+# ===== DATA & STORAGE =====
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# JSON Handling
+ujson>=5.8.0
+
+# ===== DEVELOPMENT & DEBUGGING =====
+# System Information
+psutil>=5.9.0
+
+# Date & Time
+python-dateutil>=2.8.0
+
+# ===== SECURITY & ENCRYPTION =====
+# Cryptography
+cryptography>=41.0.0
+
+# ===== WINDOWS SPECIFIC =====
+# Windows API Access
+pywin32>=306
+comtypes>=1.2.0
+
+# Windows Management
+wmi>=1.5.0
+
+# ===== USER INTERFACE =====
+# GUI Framework (Optional)
+PyQt6>=6.5.0
+
+# ===== NETWORKING =====
+# URL Handling
+urllib3>=2.0.0
+
+# ===== LOGGING =====
+# Logging
+colorama>=0.4.0
+
+# ===== DEVELOPMENT TOOLS =====
+# Code Formatting
+black>=23.0.0
+
+# Testing
+pytest>=7.4.0
+
+# ===== VERSION SPECIFIC =====
+# Use exact versions for compatibility
+# Avoid breaking changes with automatic updates
+
+# ===== INSTALLATION NOTES =====
+# Install with: pip install -r requirements.txt
+# For GPU acceleration: pip install opencv-python-headless
+# For development: pip install -r requirements.txt[dev]

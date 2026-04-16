@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  jarvis:
+    build: .
+    container_name: jarvis-ai
+    ports:
+      - "5000:5000"  # Web dashboard
+      - "3000:3000"  # API server
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./memory.json:/app/memory.json
+      - ./credentials.json:/app/credentials.json
+      - /dev/snd:/dev/snd  # Audio access
+      - /dev/video0:/dev/video0  # Camera access
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - REPLICATE_API_TOKEN=${REPLICATE_API_TOKEN:-}
+    devices:
+      - /dev/snd:/dev/snd
+      - /dev/video0:/dev/video0
+    privileged: true  # Required for camera and audio access
+    network_mode: host  # Required for Ollama access
+    restart: unless-stopped
+    depends_on:
+      - ollama
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    devices:
+      - /dev/dri:/dev/dri  # GPU access
+    restart: unless-stopped
+    command: ["serve"]
+
+volumes:
+  ollama_data:
+    driver: local
+
+networks:
+  default:
+    driver: bridge

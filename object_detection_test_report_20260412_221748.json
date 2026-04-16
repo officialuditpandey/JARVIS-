@@ -1,0 +1,48 @@
+{
+  "imports": {
+    "cv2": "PASS",
+    "pyautogui": "PASS",
+    "ollama": "PASS",
+    "PIL": "PASS",
+    "pyttsx3": "PASS"
+  },
+  "ollama": {
+    "connection": "PASS",
+    "vision_model": "PASS",
+    "local_model": "PASS",
+    "available_models": [
+      "llama3.1",
+      "moondream",
+      "jarvis-tiny",
+      "llama3.2",
+      "jarvis-light",
+      "llama3-small",
+      "llama3.1"
+    ]
+  },
+  "camera": {
+    "camera_init": "PASS",
+    "camera_capture": "PASS",
+    "frame_shape": [
+      480,
+      640,
+      3
+    ]
+  },
+  "screenshot": {
+    "screenshot": "PASS",
+    "dimensions": [
+      1920,
+      1080
+    ]
+  },
+  "jarvis_functions": {
+    "model_check": "PASS",
+    "screenshot_analysis": "PASS",
+    "camera_detection": "PASS"
+  },
+  "vision_services": {
+    "vision_plugin": "PASS",
+    "vision_service": "PASS"
+  }
+}

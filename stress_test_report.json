@@ -1,0 +1,464 @@
+{
+  "summary": {
+    "total_tests": 30,
+    "passed": 20,
+    "failed": 10,
+    "success_rate": 66.66666666666666,
+    "total_time": 14.121238,
+    "start_time": "2026-04-12T19:49:16.258318",
+    "end_time": "2026-04-12T19:49:30.379556"
+  },
+  "categories": {
+    "Core AI": {
+      "passed": 3,
+      "total": 3,
+      "success_rate": 100.0
+    },
+    "Vision & Sensory": {
+      "passed": 1,
+      "total": 2,
+      "success_rate": 50.0
+    },
+    "System Control": {
+      "passed": 1,
+      "total": 3,
+      "success_rate": 33.33333333333333
+    },
+    "Media & Entertainment": {
+      "passed": 0,
+      "total": 2,
+      "success_rate": 0.0
+    },
+    "Communication": {
+      "passed": 0,
+      "total": 2,
+      "success_rate": 0.0
+    },
+    "Cloud & Sync": {
+      "passed": 0,
+      "total": 2,
+      "success_rate": 0.0
+    },
+    "Monitoring & Diagnostics": {
+      "passed": 2,
+      "total": 2,
+      "success_rate": 100.0
+    },
+    "Thermal Optimization": {
+      "passed": 2,
+      "total": 2,
+      "success_rate": 100.0
+    },
+    "Mobile & Remote": {
+      "passed": 2,
+      "total": 2,
+      "success_rate": 100.0
+    },
+    "Maps & Navigation": {
+      "passed": 2,
+      "total": 2,
+      "success_rate": 100.0
+    },
+    "Security & Privacy": {
+      "passed": 2,
+      "total": 2,
+      "success_rate": 100.0
+    },
+    "Automation": {
+      "passed": 1,
+      "total": 2,
+      "success_rate": 50.0
+    },
+    "Advanced AI": {
+      "passed": 2,
+      "total": 2,
+      "success_rate": 100.0
+    },
+    "Development Tools": {
+      "passed": 2,
+      "total": 2,
+      "success_rate": 100.0
+    }
+  },
+  "detailed_results": {
+    "Voice Recognition": {
+      "status": "PASS",
+      "time": 0.2323613166809082,
+      "result": {
+        "success": true,
+        "message": "Found 21 microphones",
+        "microphones": [
+          "Microsoft Sound Mapper - Input",
+          "Microphone Array (Intel\u00c2\u00ae Smart ",
+          "Microsoft Sound Mapper - Output"
+        ]
+      },
+      "timestamp": "2026-04-12T19:49:16.490679"
+    },
+    "Text-to-Speech": {
+      "status": "PASS",
+      "time": 0.33048439025878906,
+      "result": {
+        "success": true,
+        "message": "Found 2 TTS voices",
+        "voices": [
+          "Microsoft David Desktop - English (United States)",
+          "Microsoft Zira Desktop - English (United States)"
+        ]
+      },
+      "timestamp": "2026-04-12T19:49:16.821163"
+    },
+    "Hybrid AI Routing": {
+      "status": "PASS",
+      "time": 0.04193449020385742,
+      "result": {
+        "success": true,
+        "message": "Router active: Privacy-sensitive task detected: 'what do you see' -> Moondream (Local Processing) to moondream",
+        "routing": [
+          "moondream",
+          "Privacy-sensitive task detected: 'what do you see' -> Moondream (Local Processing)"
+        ]
+      },
+      "timestamp": "2026-04-12T19:49:16.863098"
+    },
+    "On-Demand Vision": {
+      "status": "FAIL",
+      "time": 1.6961994171142578,
+      "result": {
+        "success": false,
+        "error": "'is_active'"
+      },
+      "timestamp": "2026-04-12T19:49:18.559297"
+    },
+    "Active Window Analysis": {
+      "status": "PASS",
+      "time": 0.06900238990783691,
+      "result": {
+        "success": true,
+        "message": "Active window analysis methods available"
+      },
+      "timestamp": "2026-04-12T19:49:18.628300"
+    },
+    "Native App Control": {
+      "status": "FAIL",
+      "time": 0.19333982467651367,
+      "result": {
+        "success": false,
+        "error": "'available_automation'"
+      },
+      "timestamp": "2026-04-12T19:49:18.825013"
+    },
+    "System Toggles": {
+      "status": "FAIL",
+      "time": 0.15908384323120117,
+      "result": {
+        "success": false,
+        "error": "'wifi_available'"
+      },
+      "timestamp": "2026-04-12T19:49:18.984097"
+    },
+    "Brightness Control": {
+      "status": "PASS",
+      "time": 0.11008596420288086,
+      "result": {
+        "success": true,
+        "message": "Brightness control available: current [21]%",
+        "current": [
+          21
+        ]
+      },
+      "timestamp": "2026-04-12T19:49:19.094183"
+    },
+    "Media Handler": {
+      "status": "FAIL",
+      "time": 0.23102784156799316,
+      "result": {
+        "success": false,
+        "error": "No module named 'vlc'"
+      },
+      "timestamp": "2026-04-12T19:49:19.325211"
+    },
+    "Media Controls": {
+      "status": "FAIL",
+      "time": 0.002075672149658203,
+      "result": {
+        "success": false,
+        "error": "No module named 'vlc'"
+      },
+      "timestamp": "2026-04-12T19:49:19.327286"
+    },
+    "WhatsApp Integration": {
+      "status": "FAIL",
+      "time": 0.1989731788635254,
+      "result": {
+        "success": false,
+        "error": "'supported_platforms'"
+      },
+      "timestamp": "2026-04-12T19:49:19.526259"
+    },
+    "Telegram Integration": {
+      "status": "FAIL",
+      "time": 0.0,
+      "result": {
+        "success": false,
+        "error": "'BackgroundExecutionService' object has no attribute 'supported_platforms'"
+      },
+      "timestamp": "2026-04-12T19:49:19.526259"
+    },
+    "Google Drive Sync": {
+      "status": "FAIL",
+      "time": 0.5604214668273926,
+      "result": {
+        "success": false,
+        "error": "'services'"
+      },
+      "timestamp": "2026-04-12T19:49:20.087596"
+    },
+    "Google Calendar Sync": {
+      "status": "FAIL",
+      "time": 0.0,
+      "result": {
+        "success": false,
+        "error": "Calendar not available"
+      },
+      "timestamp": "2026-04-12T19:49:20.087596"
+    },
+    "Resource Monitoring": {
+      "status": "PASS",
+      "time": 0.3356320858001709,
+      "result": {
+        "success": true,
+        "message": "Resource monitor active: ['chroma_db', 'ollama_models', 'jarvis_data']",
+        "status": {
+          "is_active": true,
+          "monitoring_thread_alive": false,
+          "update_interval": 60,
+          "history_count": 0,
+          "monitored_categories": [
+            "chroma_db",
+            "ollama_models",
+            "jarvis_data"
+          ],
+          "last_updated": "2026-04-12T19:49:20.423228"
+        }
+      },
+      "timestamp": "2026-04-12T19:49:20.423228"
+    },
+    "System Status Command": {
+      "status": "PASS",
+      "time": 0.022399425506591797,
+      "result": {
+        "success": true,
+        "message": "System status ready: 8.08GB total",
+        "status": {
+          "timestamp": "2026-04-12 19:49:20",
+          "ollama_models": {
+            "path": "C:\\Users\\p9621\\.ollama\\models",
+            "size_mb": 8276.563684463501,
+            "size_gb": 8.082581723108888,
+            "exists": true,
+            "file_count": 28
+          },
+          "chromadb": {
+            "path": "C:\\JARVIS\\chroma_db",
+            "size_mb": 0,
+            "size_gb": 0,
+            "exists": false,
+            "file_count": 0
+          },
+          "logs_cache": {
+            "logs_size_mb": 0.015141487121582031,
+            "cache_size_mb": 0,
+            "total_size_mb": 0.015141487121582031,
+            "total_size_gb": 1.4786608517169952e-05,
+            "total_file_count": 1
+          },
+          "project_files": {
+            "path": "C:\\JARVIS",
+            "size_mb": 5.90109920501709,
+            "size_gb": 0.005762792192399502,
+            "file_count": 297
+          },
+          "total_storage": {
+            "size_mb": 8276.578825950623,
+            "size_gb": 8.082596509717405,
+            "warning_threshold_gb": 50,
+            "warning": null
+          }
+        }
+      },
+      "timestamp": "2026-04-12T19:49:20.445628"
+    },
+    "Brain-GUI Split": {
+      "status": "PASS",
+      "time": 0.005713701248168945,
+      "result": {
+        "success": true,
+        "message": "Brain-GUI split active: normal",
+        "status": {
+          "is_active": true,
+          "thermal_mode": "normal",
+          "max_brain_threads": 2,
+          "gui_update_interval": 1.0,
+          "cpu_threshold": 70.0,
+          "memory_threshold": 80.0,
+          "cache_expiry": 300,
+          "brain_queue_size": 0,
+          "processing_threads": 0,
+          "gui_results_count": 0,
+          "cache_size": 0,
+          "last_updated": "2026-04-12T19:49:20.451342"
+        }
+      },
+      "timestamp": "2026-04-12T19:49:20.451342"
+    },
+    "Thermal Monitoring": {
+      "status": "PASS",
+      "time": 0.0033020973205566406,
+      "result": {
+        "success": true,
+        "message": "Thermal monitoring active: normal"
+      },
+      "timestamp": "2026-04-12T19:49:20.454644"
+    },
+    "Mobile Bridge Webhook": {
+      "status": "PASS",
+      "time": 2.180701494216919,
+      "result": {
+        "success": true,
+        "message": "Mobile bridge ready: http://0.0.0.0:5000/webhook",
+        "status": {
+          "is_active": true,
+          "webhook_url": "http://0.0.0.0:5000/webhook",
+          "webhook_port": 5000,
+          "supported_platforms": [
+            "whatsapp",
+            "telegram",
+            "sms",
+            "webhook"
+          ],
+          "active_commands": 0,
+          "command_history_count": 0,
+          "allowed_senders": 0,
+          "last_updated": "2026-04-12T19:49:22.635345"
+        }
+      },
+      "timestamp": "2026-04-12T19:49:22.635345"
+    },
+    "Remote Commands": {
+      "status": "PASS",
+      "time": 2.0037057399749756,
+      "result": {
+        "success": true,
+        "message": "Remote command processing available"
+      },
+      "timestamp": "2026-04-12T19:49:24.640604"
+    },
+    "Maps Service": {
+      "status": "PASS",
+      "time": 0.6834001541137695,
+      "result": {
+        "success": true,
+        "message": "Maps service ready: True",
+        "status": {
+          "is_active": true,
+          "geocoder_available": true,
+          "folium_available": true,
+          "geopy_available": true,
+          "api_key_configured": false,
+          "last_updated": "2026-04-12T19:49:25.322501"
+        }
+      },
+      "timestamp": "2026-04-12T19:49:25.324004"
+    },
+    "Location Search": {
+      "status": "PASS",
+      "time": 0.09552860260009766,
+      "result": {
+        "success": true,
+        "message": "Location search available"
+      },
+      "timestamp": "2026-04-12T19:49:25.419533"
+    },
+    "Privacy Mode": {
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "message": "Privacy mode ready: 67 privacy tasks",
+        "privacy_tasks": 67
+      },
+      "timestamp": "2026-04-12T19:49:25.419533"
+    },
+    "Local Processing": {
+      "status": "PASS",
+      "time": 0.01160883903503418,
+      "result": {
+        "success": true,
+        "message": "Local processing ready: 1 models available",
+        "models": [
+          "llama3.1:8b"
+        ]
+      },
+      "timestamp": "2026-04-12T19:49:25.431142"
+    },
+    "Background Execution": {
+      "status": "FAIL",
+      "time": 0.0040760040283203125,
+      "result": {
+        "success": false,
+        "error": "'task_categories'"
+      },
+      "timestamp": "2026-04-12T19:49:25.435218"
+    },
+    "Command Chaining": {
+      "status": "PASS",
+      "time": 2.868598699569702,
+      "result": {
+        "success": true,
+        "message": "Command chaining available"
+      },
+      "timestamp": "2026-04-12T19:49:28.303816"
+    },
+    "Autonomous Reasoning": {
+      "status": "PASS",
+      "time": 1.010523796081543,
+      "result": {
+        "success": true,
+        "message": "Autonomous reasoning ready: default",
+        "status": {
+          "is_active": true,
+          "personality_mode": "default"
+        }
+      },
+      "timestamp": "2026-04-12T19:49:29.314340"
+    },
+    "System State Checks": {
+      "status": "PASS",
+      "time": 1.0063323974609375,
+      "result": {
+        "success": true,
+        "message": "System state reflection available"
+      },
+      "timestamp": "2026-04-12T19:49:30.320673"
+    },
+    "Code Generation": {
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "message": "Code generation available through AI"
+      },
+      "timestamp": "2026-04-12T19:49:30.320673"
+    },
+    "Debug Assistance": {
+      "status": "PASS",
+      "time": 0.0588834285736084,
+      "result": {
+        "success": true,
+        "message": "Debug assistance available"
+      },
+      "timestamp": "2026-04-12T19:49:30.379556"
+    }
+  }
+}
