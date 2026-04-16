@@ -244,8 +244,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For issues, questions, or contributions:
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/your-username/jarvis/issues)
-- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/your-username/jarvis/discussions)
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/officialauditpandey/JARVIS-/issues)
+- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/officialauditpandey/JARVIS-/discussions)
 - 🔒 **Security Issues**: uditpandey9621@gmail.com
 
 ---
