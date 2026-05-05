@@ -61,7 +61,7 @@ JARVIS is a cutting-edge hybrid AI assistant that seamlessly integrates multiple
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/your-username/jarvis.git
+git clone https://github.com/officialuditpandey/JARVIS-.git
 cd jarvis
 ```
 
