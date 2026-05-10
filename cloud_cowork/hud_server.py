@@ -246,8 +246,9 @@ def execute_action():
         
         return jsonify({'success': True, 'result': result})
     except Exception as e:
-        add_notification('Action Error', str(e), 'error')
-        return jsonify({'success': False, 'error': str(e)})
+        app.logger.exception("Error executing automation action")
+        add_notification('Action Error', 'Internal error occurred', 'error')
+        return jsonify({'success': False, 'error': 'An internal error has occurred'})
 
 @app.route('/api/chat_command', methods=['POST'])
 def chat_command():
