@@ -667,12 +667,8 @@ class RemoteMobileBridgeService:
             self.webhook_url = f"http://{self.webhook_host}:{self.webhook_port}/webhook"
             
             print(f"Webhook server started at {self.webhook_url}")
-            masked_token = (
-                f"{self.secret_token[:4]}...{self.secret_token[-4:]}"
-                if self.secret_token and len(self.secret_token) > 8
-                else "***"
-            )
-            print(f"Secret token: {masked_token}")
+            token_configured = bool(self.secret_token)
+            print(f"Secret token configured: {'yes' if token_configured else 'no'}")
             
         except Exception as e:
             print(f"Failed to start webhook server: {e}")
