@@ -1179,4 +1179,8 @@ if __name__ == '__main__':
     print("Dashboard available at: http://localhost:3000")
     print("Press Ctrl+C to stop the server")
     
-    app.run(host='0.0.0.0', port=3000, debug=True)
+    app.run(
+        host='0.0.0.0',
+        port=3000,
+        debug=os.getenv('FLASK_DEBUG', '').lower() in ('1', 'true', 'yes', 'on')
+    )
