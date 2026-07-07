@@ -868,7 +868,7 @@ def send_whatsapp_to_number(phone_number, message):
             time.sleep(2)  # Wait for new chat dialog
             
             # Step 4: Type the phone number
-            print(f"Typing phone number: {clean_phone}")
+            print("Typing phone number into WhatsApp...")
             pyautogui.hotkey('ctrl', 'a')  # Select all
             pyautogui.press('backspace')   # Clear any existing text
             time.sleep(0.5)
